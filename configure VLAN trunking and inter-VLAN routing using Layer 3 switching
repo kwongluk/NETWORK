@@ -1,0 +1,19 @@
+## configure VLAN trunking and inter-VLAN routing using Layer 3 switching
+
+Switch(config)# interface GigabitEthernet0/1  //configure the switch port for trunking
+Switch(config-if)# switchport mode trunk
+Switch(config-if)# switchport trunk allowed vlan 10,20,30  //specify the allowed VLANs
+
+Switch(config)# interface vlan 10  //create VLAN interface for VLAN 10
+Switch(config-if)# ip address 192.168.10.1 255.255.255.0  //assign IP address to the VLAN interface
+
+Switch(config)# interface vlan 20  //create VLAN interface for VLAN 20
+Switch(config-if)# ip address 192.168.20.1 255.255.255.0  //assign IP address to the VLAN interface
+
+Switch(config)# interface vlan 30  //create VLAN interface for VLAN 30
+Switch(config-if)# ip address 192.168.30.1 255.255.255.0  //assign IP address to the VLAN interface
+
+Switch(config)# ip routing  //enable routing on the switch
+
+
+
