@@ -1,0 +1,22 @@
+#configure 802.1Q VLAN tagging on a Cisco switch
+
+vlan 10
+name VLAN10
+vlan 20
+name VLAN20
+
+
+interface GigabitEthernet1/0/1
+switchport mode trunk
+switchport trunk encapsulation dot1q
+
+interface GigabitEthernet1/0/1
+switchport trunk allowed vlan 10,20
+
+interface GigabitEthernet1/0/2
+switchport mode access
+switchport access vlan 10
+
+
+
+
