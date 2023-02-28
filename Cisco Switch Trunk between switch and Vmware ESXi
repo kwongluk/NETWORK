@@ -1,0 +1,21 @@
+#Cisco Switch - Trunk between switch and Vmware ESXi
+
+default interface gigabitethernet 0/24
+interface gigabitethernet 0/24
+switchport trunk native vlan 1
+switchport mode trunk
+exit
+
+# VMWAR ESXI
+vSwitch : vSwith0
+NETWORK LABEL : VLAN479-WEB
+VLAN ID (OPTIONAL) : 479
+
+NETWORK LABEL : VLAN480-APP
+VLAN ID (OPTIONAL) : 480
+
+NETWORK LABEL : VLAN481-DB
+VLAN ID (OPTIONAL) : 481
+
+NETWORK LABEL : VLAN 1-NO TAG NETWORK
+VLAN ID (OPTIONAL) : NONE(0)
