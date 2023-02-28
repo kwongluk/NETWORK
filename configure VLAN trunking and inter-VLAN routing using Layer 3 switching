@@ -15,5 +15,15 @@ Switch(config-if)# ip address 192.168.30.1 255.255.255.0  //assign IP address to
 
 Switch(config)# ip routing  //enable routing on the switch
 
+interface GigabitEthernet1/0/1
+no switchport
+interface GigabitEthernet1/0/1
+ip address 192.168.0.1 255.255.255.0
+interface GigabitEthernet1/0/1
+no shutdown
+router ospf 1
+network 192.168.0.0 0.0.0.255 area 0
+
+
 
 
